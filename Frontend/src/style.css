@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  scroll-behavior: smooth
+}
+
+.sideBarItem {
+  @apply flex flex-col;
+}
+
+.sideBarTitle {
+  @apply w-[80%] m-[10px] text-[18px] font-semibold leading-5 p-1 border-y border-[#a7a4a4] text-center;
+}
+
+.sideBarList {
+  @apply mb-[30px] gap-[15px] text-center w-full;
+}
+
+.sideBarListItem {
+  @apply inline-block w-[50%] mt-[15px] cursor-pointer;
+}
+
+/* Input Fields */
+.myInputField{
+  @apply relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm;
+}
+
+.talks {
+  display: grid;
+  grid-template-columns: 25% 75%;
+}
+
+/* Hamburger Menu */ 
+.hamburger {
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: 2px;
+  background: #000;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+
+.hamburger-middle {
+  transform: translateY(7px);
+}
+
+.hamburger-bottom {
+  transform: translateY(14px);
+}
+
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0);
+}
+
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translate(6px);
+}
+
+.open .hamburger-middle {
+  display: none;
+}
+
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translate(-6px);
+}
